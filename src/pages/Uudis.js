@@ -9,7 +9,7 @@ const Uudis = () => {
     const uudis = UUDISED[id];
 
     return (
-        <div style={{ 'max-width': '800px', 'border': '1px solid green', 'text-align': 'left' }} >
+        <div style={{ 'max-width': '800px', 'xborder': '1px solid green', 'text-align': 'left' }} >
             <h3>{uudis.pealkiri}</h3>
             <img src={uudis.pildiURL} style={{ width: '800px' }} />
             <p>{uudis.sisu}</p>
