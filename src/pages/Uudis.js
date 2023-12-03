@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { UUDISED } from '../andmed.js';
+import getGlobalPath from '../global';
 
 const Uudis = () => {
     const [searchParams] = useSearchParams();
@@ -13,7 +14,7 @@ const Uudis = () => {
             <h3>{uudis.pealkiri}</h3>
             <img src={uudis.pildiURL} style={{ width: '800px' }} />
             <p>{uudis.sisu}</p>
-            <Link to="/">Tagasi</Link>
+            <Link to={`${getGlobalPath()}`}>Tagasi</Link>
         </div>
     );
 }
