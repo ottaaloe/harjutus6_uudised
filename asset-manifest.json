@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/harjutus6_uudised/static/css/main.0c929ab4.css",
-    "main.js": "/harjutus6_uudised/static/js/main.d668349e.js",
+    "main.js": "/harjutus6_uudised/static/js/main.5164f9a6.js",
     "static/js/787.697157f3.chunk.js": "/harjutus6_uudised/static/js/787.697157f3.chunk.js",
     "index.html": "/harjutus6_uudised/index.html",
     "main.0c929ab4.css.map": "/harjutus6_uudised/static/css/main.0c929ab4.css.map",
-    "main.d668349e.js.map": "/harjutus6_uudised/static/js/main.d668349e.js.map",
+    "main.5164f9a6.js.map": "/harjutus6_uudised/static/js/main.5164f9a6.js.map",
     "787.697157f3.chunk.js.map": "/harjutus6_uudised/static/js/787.697157f3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c929ab4.css",
-    "static/js/main.d668349e.js"
+    "static/js/main.5164f9a6.js"
   ]
 }
