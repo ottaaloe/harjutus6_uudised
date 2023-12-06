@@ -1,22 +1,34 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
-import { UUDISED } from '../andmed.js';
-import getGlobalPath from '../global';
+
+import { contentfulClient } from '../App';
 
 const Uudis = () => {
-    const [searchParams] = useSearchParams();
-    const id = searchParams.get("id");
-    console.log(id);
-    const uudis = UUDISED[id];
+    const { newsId } = useParams();
+    const [uudis, setUudis] = useState([]);
+    console.log('news', newsId);
+    useEffect(() => {
+        contentfulClient.getEntry(newsId).then((response) => {
+            console.log(response);
+            setUudis(response.fields);
+        });
+    }, [])
 
-    return (
-        <div style={{ 'max-width': '800px', 'xborder': '1px solid green', 'text-align': 'left' }} >
-            <h3>{uudis.pealkiri}</h3>
-            <img src={uudis.pildiURL} style={{ width: '800px' }} />
-            <p>{uudis.sisu}</p>
-            <Link to={`${getGlobalPath()}`}>Tagasi</Link>
-        </div>
-    );
+    if (!uudis.title)
+        return null
+    else {
+
+        return (
+            <div style={{ 'max-width': '800px', 'xborder': '1px solid green', 'text-align': 'left' }} >
+
+                <h3>{uudis.title}</h3>
+                <img src={uudis.image.fields.file.url} style={{ width: '800px' }} />
+                {<p style={{ 'white-space': 'pre-wrap' }}>{uudis.body}</p>}
+                <Link to="/">Tagasi</Link>
+            </div>
+        );
+    }
 }
 
 export default Uudis;
